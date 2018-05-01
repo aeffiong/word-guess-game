@@ -4,6 +4,13 @@ h1 {
     text-align: center;
 }
 
+#gameSpace {
+    border-style: solid;
+    border-width: 5px;
+    border-color: rebeccapurple;
+    height: 200px;
+}
+
 #a {
     border-style: solid;
     border-width: 3px;
@@ -236,4 +243,9 @@ h1 {
     padding: 10px;
     margin-right: 10px;
     float: left;
+}
+
+p {
+    clear: both;
+    text-align: center;
 }
