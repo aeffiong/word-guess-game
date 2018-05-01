@@ -6,21 +6,33 @@
     <title>Word Guess Game</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="assests/css/reset.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assests/css/style.css" />
     <script src="assests/javascript/game.js"></script>
 </head>
 <body>
-    <h1>Press any key to get started!</h1>
-    <p>Wins:</p>
-    <p>Losses:</p>
-    <br>
-    <div id ="gameSpace">
+    <div class="jumbotron">
+        <h1 class="display-4">Word Guess Game!</h1>
+        <p>Press any key to get started!</p>
+        <p>Wins:</p>
+        <p>Losses:</p>
+        
+        
+    </div>
+    
+    <div class="card">
+        <div class="card-body">
+            <p>Word to Guess:</p>
+            <div id ="gameSpace"></div>
+        </div>
+    </div>
+    
         <div id = "wordUnderline">
             
         </div>
         <!-- where I'll put the dashed lines for the words -->
     </div>
-    <div id =letterbank>
+    <!-- <div id =letterbank>
         <div id = "a" value = "A" onclick="guessLetter ()" >A</div>
         <div id = "b" value = "B" onclick="guessLetter ()" >B</div>
         <div id = "c" value = "C" onclick="guessLetter ()" >C</div>
@@ -47,12 +59,22 @@
         <div id = "x" value = "X" onclick="guessLetter ()" >X</div>
         <div id = "y" value = "Y" onclick="guessLetter ()" >Y</div>
         <div id = "z" value = "Z" onclick="guessLetter ()" >Z</div>
+    </div> -->
+    
+    <div class="card">
+        <div class="card-body">
+            <p>Guesses left:</p>
+        </div>
     </div>
-    <br>
-    <br>
-    <br>
-    <p>Guesses left:</p>
-    <p>Letters already picked:</p>
+    
+    <div class="card">
+        <div class="card-body">
+            <p>Letters already picked:</p>
+        </div>
+    </div>
+
+    
+    
     
 </body>
 </html>

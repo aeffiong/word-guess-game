@@ -32,9 +32,12 @@
 
 
 // create key events (document.onkeyup)
-    document.onclick = function(event) {
-        // var guessLetter = String.fromCharCode(event.key)
-        // .toLowerCase();
+    document.onkeyup = function(event) {
+        var guessLetter = String.fromCharCode(event.key)
+        .toLowerCase();
+
+        console.log(guessLetter);
+        alert(guessLetter);
 
         var guessLetter = event.key;
         console.log(guessLetter);
