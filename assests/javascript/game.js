@@ -19,8 +19,11 @@
 // After the user wins/loses the game should automatically choose another word and make the user play it. --> 
 
 // first: declare variables
-    var exercises = ["squat", "pushup", "lunge", "pullup", "deadlift", "presses", "curls"];
+    var exercises = ["squat", "pushup", "lunge", "pullup", "deadlift", "presses", "curls", "burpee", "plank"];
     console.log(exercises);
+
+    var guessesLeft = 10;
+
 
 // create key events (document.onkeyup)
     document.onkeyup = function(event) {
@@ -32,6 +35,10 @@
     }
 
 // show word on document with dashes that fill in
+    document.getElementById('letter') .innerHTML = letter;
+    document.getElementById('letter') .style.visibility = "hidden";
+    document.getElementById('underline') .style.display = "block";
+    document.getElementById('underline') .style.borderBottom = "3px solid black";
 
 // create conditions for them to guess the word (if, if else, else)
 
