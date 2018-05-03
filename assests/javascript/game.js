@@ -51,7 +51,7 @@
         console.log(numBlanks);
 
         // reset
-        // guessesLeft = 10;
+        guessesLeft = maxTries;
         wrongLettersPicked = [];
         blanksAndCorrect = [];
 
@@ -61,13 +61,8 @@
         }
 
         console.log(blanksAndCorrect);
-         // html
-         document.getElementById("gameSpace").innerHTML = blanksAndCorrect.join(" ");
-         document.getElementById("guessesLeft").innerHTML = "Guesses left: " + guessesLeft;
-         document.getElementById("wins").innerHTML = "Wins: " + wins;
-         document.getElementById("losses").innerHTML = "Losses: " + wins;
-         document.getElementById("lettersPicked").innerHTML = "Letters already picked: " + wrongLettersPicked;
- 
+
+        
  
     function checkLetters(letter) {
          var isLetterInWord = false;
@@ -90,9 +85,28 @@
     //  if letter not found
      else {
          wrongLettersPicked.push(letter);
-         guessesLeft --;
          alert("incorrect guess");
+         guessesLeft --;
+
+         console.log(guessesLeft);
+         document.getElementById("guessesLeft").innerHTML = "Guesses left: " + guessesLeft;
+         document.getElementById("lettersPicked").innerHTML = "Letters already picked: " + wrongLettersPicked;
+         if(guessesLeft == 0) {
+            alert("You lose");
+        }
+    // function resetGame() {
+        // check if won
+        if(lettersInWord.toString() == blanksAndCorrect.toString()) {
+            wins ++;
+            alert("You won!");
+            document.getElementById("wins").innerHTML = "Wins: " + wins;
+           
+        // }
+
+        // check if lost
+    }
      }
+     
     }
     console.log(blanksAndCorrect);
     console.log(wrongLettersPicked);
@@ -106,7 +120,13 @@ document.onkeyup = function(event) {
         document.getElementById("gameSpace").innerHTML = blanksAndCorrect.join(" ");
     }
 
-        
+    // html to display on screen
+    document.getElementById("gameSpace").innerHTML = blanksAndCorrect.join(" ");
+    document.getElementById("guessesLeft").innerHTML = "Guesses left: " + guessesLeft;
+    document.getElementById("wins").innerHTML = "Wins: " + wins;
+    document.getElementById("losses").innerHTML = "Losses: " + wins;
+    document.getElementById("lettersPicked").innerHTML = "Letters already picked: " + wrongLettersPicked;
+ 
 
     }
        
