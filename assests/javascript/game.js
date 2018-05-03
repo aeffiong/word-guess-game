@@ -19,29 +19,121 @@
 // After the user wins/loses the game should automatically choose another word and make the user play it. --> 
 
 // first: declare variables
-    var exercises = ["squat", "pushup", "lunge", "pullup", "deadlift", "presses", "curls", "burpee", "plank"];
-    console.log(exercises);
-
-
-// create the number of guesses they are allowed
-    var guessesLeft = 10;
-    // var numberWrong = 0;
-    // var numberRight = 0;
+    var exercises = ["squat", "pushup", "lunge", "pullup", "deadlift", "presses", "curls", "burpee", "plank", "inchworm", "jump", "superman", "crunch"];
+    var wordSelected = "";
+    var lettersInWord = [];
+    var numBlanks = 0;
+    var blanksAndCorrect = [];
+    var wrongLettersPicked = [];
+    const maxTries = 10;
+    var guessesLeft = 0;
+    // var gameStarted = false;
+    // var gameHasFinished = false;
     var wins = 0;
     var losses = 0;
 
+   
+
 
 // create key events (document.onkeyup)
-    document.onkeyup = function(event) {
-        var guessLetter = String.fromCharCode(event.key)
-        .toLowerCase();
+    window.onload = function() {
+        guessesLeft = maxTries;
+        gameStarted = false;
+        console.log(guessesLeft);
+      
+        wordSelected = exercises[Math.floor(Math.random () * exercises.length)]
+        console.log(wordSelected);
 
-        console.log(guessLetter);
-        alert(guessLetter);
+        lettersInWord = wordSelected.split("");
+        console.log(lettersInWord);
 
-        var guessLetter = event.key;
-        console.log(guessLetter);
+        numBlanks = lettersInWord.length;
+        console.log(numBlanks);
+
+        // reset
+        // guessesLeft = 10;
+        wrongLettersPicked = [];
+        blanksAndCorrect = [];
+
+        // populate blanks
+        for (var i=0; i<numBlanks; i++) {
+            blanksAndCorrect.push("_");
+        }
+
+        console.log(blanksAndCorrect);
+         // html
+         document.getElementById("gameSpace").innerHTML = blanksAndCorrect.join(" ");
+         document.getElementById("guessesLeft").innerHTML = "Guesses left: " + guessesLeft;
+         document.getElementById("wins").innerHTML = "Wins: " + wins;
+         document.getElementById("losses").innerHTML = "Losses: " + wins;
+         document.getElementById("lettersPicked").innerHTML = "Letters already picked: " + wrongLettersPicked;
+ 
+ 
+    function checkLetters(letter) {
+         var isLetterInWord = false;
+
+         for(var i=0; i<numBlanks; i++) {
+             if(wordSelected[i] == letter) {
+                 isLetterInWord = true;
+                 
+             }
+         }
+        //  if letter found
+         if(isLetterInWord) {
+         for(var i=0; i<numBlanks; i++) {
+             if (wordSelected[i] == letter) {
+                 blanksAndCorrect[i] = letter;
+                 alert("correct guess");
+             }
+         }
+     }
+    //  if letter not found
+     else {
+         wrongLettersPicked.push(letter);
+         guessesLeft --;
+         alert("incorrect guess");
+     }
     }
+    console.log(blanksAndCorrect);
+    console.log(wrongLettersPicked);
+
+document.onkeyup = function(event) {
+        var guessLetter = String.fromCharCode(event.keyCode).toLowerCase();
+        checkLetters(guessLetter);
+
+
+        console.log(guessLetter);
+        document.getElementById("gameSpace").innerHTML = blanksAndCorrect.join(" ");
+    }
+
+        
+
+    }
+       
+
+    
+
+// resetGame();
+    // document.onkeyup = function(event) {
+    //     var guessLetter = String.fromCharCode(event.key)
+    //     .toLowerCase();
+
+    //     console.log(guessLetter);
+       
+
+    //     var guessLetter = event.key;
+    //     console.log(guessLetter);
+
+    //     document.getElementById("guessesLeft").innerHTML = "Guesses Left: " + guessesLeft--;
+    //     console.log (guessesLeft);
+
+    //     document.getElementById("wins").innerHTML = "Wins: " + wins;
+    //     console.log (wins);
+    // }
+
+
+
+
 
 // show word on document with dashes that fill in
     // document.getElementById('letter') .innerHTML = letter;
