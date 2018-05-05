@@ -1,251 +1,49 @@
+* {
+    box-sizing: border-box;
+}
+
 h1 {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-weight: 700px;
     text-align: center;
 }
 
+.jumbotron {
+    background-color: #666666;
+    color: white;
+}
+
+.card {
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
 #gameSpace {
     border-style: solid;
     border-width: 5px;
-    border-color: rebeccapurple;
+    border-color: #4aaaa5;
     height: 200px;
-}
-
-#a {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#b {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#c {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#d {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#e {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#f {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#g {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#h {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#i {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#j {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#k {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#l {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#m {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#n {
-    float: left;
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-}
-
-#o {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#p {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#q {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#r {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#s {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#t {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#u {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#v {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#w {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#x {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#y {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
-}
-
-#z {
-    border-style: solid;
-    border-width: 3px;
-    border-color: gray;
-    padding: 10px;
-    margin-right: 10px;
-    float: left;
+    text-align: center;
+    letter-spacing: 30px;
+    padding: 60px;    
 }
 
 p {
-    clear: both;
+    text-align: center;
+    font-size: 20px;
+}
+
+#footer {
+    height: 50px;
+    position: relative;
+    right: 0;
+    left: 0;
+    margin-top: 50px;
+    width: 100%;
+    padding: 20px 0;
+    background-color: #666666;
+    color: #ffffff;
+    border-top: 8px solid #4aaaa5;
+    font-size: 12px;   
     text-align: center;
 }
