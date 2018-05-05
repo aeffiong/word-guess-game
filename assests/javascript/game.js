@@ -78,14 +78,14 @@
          for(var i=0; i<numBlanks; i++) {
              if (wordSelected[i] == letter) {
                  blanksAndCorrect[i] = letter;
-                 alert("correct guess");
+                //  alert("correct guess");
              }
          }
      }
     //  if letter not found
      else {
          wrongLettersPicked.push(letter);
-         alert("incorrect guess");
+        //  alert("incorrect guess");
          guessesLeft --;
 
          console.log(guessesLeft);
@@ -125,7 +125,7 @@
             guessesLeft = maxTries;
             wrongLettersPicked = [];
             blanksAndCorrect = [];
-
+        // figure out why I have to click another button for it to alert that I won instead
             
 
             // repopulate blanks
