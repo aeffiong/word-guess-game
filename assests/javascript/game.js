@@ -7,14 +7,18 @@
     var blanksAndCorrect = [];
     var wrongLettersPicked = [];
     const maxTries = 10;
-    var guessesLeft = 0;
+    var guessesLeft = maxTries;
     // var gameStarted = false;
     // var gameHasFinished = false;
     var wins = 0;
     var losses = 0;
 
-   
-
+//    functions
+    function reset() {
+        guessesLeft = maxTries;
+        wrongLettersPicked = [];
+        blanksAndCorrect = [];
+        }
 
 // create key events
     window.onload = function() {
@@ -32,9 +36,11 @@
         console.log(numBlanks);
 
         // reset
+    
         guessesLeft = maxTries;
         wrongLettersPicked = [];
         blanksAndCorrect = [];
+    
 
         // populate blanks
         for (var i=0; i<numBlanks; i++) {
@@ -47,6 +53,13 @@
  
     function checkLetters(letter) {
          var isLetterInWord = false;
+        //  allow only letters
+         var regex = /^[a-zA-Z]+$/;
+         if (!letter.match(regex)) {
+            alert("Please type a letter")
+            guessesLeft = maxTries;
+            wrongLettersPicked = [];
+         }
 
          for(var i=0; i<numBlanks; i++) {
              if(wordSelected[i] == letter) {
@@ -72,15 +85,20 @@
          console.log(guessesLeft);
          document.getElementById("guessesLeft").innerHTML = "Guesses left: " + guessesLeft;
          document.getElementById("lettersPicked").innerHTML = "Letters already picked: " + wrongLettersPicked;
-         if(guessesLeft == 0) {
+         if(guessesLeft === 0) {
+            reset(); 
             losses ++;
+            // reset();
             alert("You lose");
+            alert("The word was " + wordSelected);
             document.getElementById("losses").innerHTML = "Losses: " + losses;
+            
+            
             // reset
              // reset
-             guessesLeft = maxTries;
-             wrongLettersPicked = [];
-             blanksAndCorrect = [];
+            //  guessesLeft = maxTries;
+            //  wrongLettersPicked = [];
+            //  blanksAndCorrect = [];
  
              
  
@@ -98,14 +116,14 @@
          }
         }
         // check if won
-        if(lettersInWord.toString() == blanksAndCorrect.toString()) {
-            wins ++;
-            alert("You won!");
-            document.getElementById("wins").innerHTML = "Wins: " + wins;
+        if(lettersInWord.toString() === blanksAndCorrect.toString()) {
             // reset
             guessesLeft = maxTries;
             wrongLettersPicked = [];
             blanksAndCorrect = [];
+            wins ++;
+            alert("You won!");
+            document.getElementById("wins").innerHTML = "Wins: " + wins;
         // figure out why I have to click another button for it to alert that I won instead
             
 
